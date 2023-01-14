@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/styles/body.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
+
+    <style>
+        .gradient-custom-3 {
+            background: #313131;
+            background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
+            background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5))
+        }
+
+        .gradient-custom-4 {
+            background: #84fab0;
+            background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+            background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
+        }
+    </style>
+
+    <title>Create Account</title>
+</head>
+
+<body>
+    <section class="vh-100 bg-image"
+        style="background-image: url('https://www.dlsu.edu.ph/wp-content/uploads/2019/07/1_s0F0i9hHCwc756pbaYCWrQ.png');">
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+            <div class="container h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body p-5">
+                                <img class="text-center d-block mx-auto mb-4" src="\images\dlsu.png" alt="" width="72"
+                                    height="72">
+                                <h3 class="text-center">Civil Works and Sanitary Office</h3>
+                                <h6 class="text-uppercase text-center mb-5">Create an account</h6>
+                                <form action="postRegister" method="POST">
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <label class="form-label mb-1" for="firstname">First Name</label>
+                                            <input type="text" id="firstname" name="firstname" class="form-control form-control-lg"
+                                                placeholder="First Name" required />
+                                        </div>
+                                        <div class="col">
+                                            <label class="form-label mb-1" for="lastname">Last Name</label>
+                                            <input type="text" id="lastname" name="lastname" class="form-control form-control-lg"
+                                                placeholder="Last Name" required />
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label mb-1" for="email">Email</label>
+                                        <input type="email" id="email" name="email" class="form-control form-control-lg"
+                                            placeholder="E-mail Address" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label mb-1" for="password">Password</label>
+                                        <input type="password" id="password" name="password" minlength="8"
+                                            class="form-control form-control-lg password" placeholder="Password"
+                                            required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label mb-2 " for="confirmPassword">Confirm Password</label>
+                                        <input type="password" id="confirmPassword" name="confirmPassword"
+                                            class="form-control form-control-lg"
+                                            placeholder="Confirm password" required />
+                                    </div>
+
+                                    <div class="text-center mb-1 text-danger" id="errors">
+                                        <i>{{error}}</i>
+                                    </div>
+
+                                    <div class="text-center mb-1 text-success" id="success">
+                                        <i>{{success}}</i>
+                                    </div>
+
+                                    <div class="form-check d-flex justify-content-center mb-5">
+                                        <input class="form-check-input me-2" type="checkbox" id="admin_boolean"
+                                            name="admin_boolean" />
+                                        <label class="form-check-label" for="admin_boolean">Register as Admin</label>
+                                    </div>
+
+                                    <div class="d-flex justify-content-center">
+                                        <button type="button" class="btn btn-success gradient-custom-3 text-body"
+                                            onClick="location.href = '/dashboard';">
+                                            Back to Dashboard</button>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                                <button type="submit"
+                                                    class="btn btn-success gradient-custom-4 text-body submit"
+                                                    id="submit">Register Account</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
